@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forkpack — Все виджеты для сайта в одном пакете</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Основные SEO теги -->
+    <meta name="description"
+        content="Forkpack — набор готовых виджетов для вашего сайта: ускоряйте создание страниц с удобными инструментами и стилизованными компонентами в одном пакете.">
+    <meta name="keywords"
+        content="forkpack, виджеты для сайта, веб компоненты, готовые виджеты, ui kit, frontend toolkit, швейцарский нож">
+    <meta name="author" content="Forkpack Team">
+    <meta name="robots" content="index, follow">
+    <meta name="revisit-after" content="7 days">
+    <meta name="language" content="Russian">
+    <meta name="geo.region" content="RU">
+    <meta name="geo.placename" content="Russia">
+    <meta name="geo.country" content="RU">
+
+    <!-- Open Graph (для соцсетей) -->
+    <meta property="og:title" content="Forkpack — Все виджеты для сайта в одном пакете">
+    <meta property="og:description"
+        content="Набор готовых виджетов для быстрого создания стильных сайтов. Ускорьте разработку в 10 раз!">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://forkpack.ru">
+    <meta property="og:site_name" content="Forkpack">
+    <meta property="og:locale" content="ru_RU">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Forkpack — Все виджеты для сайта в одном пакете">
+    <meta name="twitter:description" content="Готовые виджеты для быстрого создания сайтов">
+
+    <!-- Доступность -->
+    <meta name="theme-color" content="#3B82F6">
+    <meta name="color-scheme" content="light dark">
+    <meta name="supported-color-schemes" content="light">
+
+    <!-- JSON-LD структурированные данные -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Forkpack",
+            "description": "Набор готовых виджетов для веб-разработки",
+            "applicationCategory": "WebApplication",
+            "operatingSystem": "Web",
+            "accessibilityFeature": ["alternativeText", "ARIA", "highContrast", "keyboardNavigation", "largePrint", "screenReaderOptimized"],
+            "accessibilityHazard": "none",
+            "accessibilityControl": ["fullKeyboardControl", "fullMouseControl", "fullTouchControl"],
+            "accessibilityAPI": "ARIA",
+            "offers": {
+                "@type": "Offer",
+                "price": "10000",
+                "priceCurrency": "RUB"
+            },
+            "url": "https://forkpack.ru"
+        }
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tone@15/build/Tone.js"></script>
+
+    <script type="module" src="https://unpkg.com/christmas-tree@1.0.2/christmas-tree.js?module"></script>
+    <script type="module" src="https://unpkg.com/christmas-lights?module"></script>
+    <script type="module" src="https://unpkg.com/forkpack@0.1.0-beta.0/cdn/fp.umd.min.js?module"></script>
+</head>
+
+<body class="bg-gray-50 min-h-screen" role="document">
+    <!-- Skip to main content link for screen readers -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-blue-600 text-white p-2 z-50">
+        Перейти к основному содержанию
+    </a>
+
+    <christmas-lights 
+        role="complementary" 
+        aria-label="Новогодняя гирлянда для украшения страницы">
+    </christmas-lights>
+    
+    <main id="main-content" class="container mx-auto px-4 py-8" role="main">
+        <!-- Hero Section -->
+        <section class="text-center mb-12" aria-labelledby="hero-heading">
+            <div role="presentation" aria-hidden="true">
+                <christmas-tree 
+                    style="height: 350px; justify-content: center; display: flex;"
+                    role="img"
+                    aria-label="Новогодняя ёлка"
+                    tabindex="0">
+                </christmas-tree>
+            </div>
+            
+            <h1 id="hero-heading" class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+                forkpack
+            </h1>
+            
+            <p class="text-xl text-gray-600 mb-6">
+                Все необходимые виджеты для вашего сайта в одном пакете
+            </p>
+
+            <!-- Trial Banner -->
+            <div class="bg-gradient-to-r from-green-400 to-emerald-500 text-white p-4 rounded-xl shadow-lg max-w-2xl mx-auto mb-6" 
+                 role="region" 
+                 aria-label="Пробный период">
+                <div class="flex items-center justify-center">
+                    <i data-feather="clock" class="mr-3" aria-hidden="true"></i>
+                    <p class="text-lg font-semibold">Пробный доступ на 7 дней бесплатно!</p>
+                </div>
+                <p class="text-sm mt-2 opacity-90">Оцените все возможности без обязательств</p>
+            </div>
+
+            <div class="bg-gradient-to-r from-blue-500 to-purple-600 text-white p-6 rounded-2xl shadow-lg max-w-2xl mx-auto"
+                 role="region"
+                 aria-label="Выбор тарифа">
+                <h2 class="text-2xl font-bold mb-2">Выберите подходящий тариф</h2>
+                <p class="mb-4">От базового пакета до полного решения с дополнениями</p>
+                
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="https://t.me/semyonfedoseev"
+                       class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300"
+                       role="button"
+                       aria-label="Начать 7-дневный пробный период">
+                        Начать 7-дневный пробный период
+                    </a>
+                    
+                    <a href="#pricing"
+                       class="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:bg-opacity-10 transition duration-300"
+                       role="button"
+                       aria-label="Сравнить тарифы">
+                        Сравнить тарифы
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section id="pricing" class="mb-12" aria-labelledby="pricing-heading">
+            <h2 id="pricing-heading" class="text-3xl font-bold text-gray-800 mb-8 text-center">Тарифные планы</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto" role="list">
+                <!-- Полностью открытый тариф -->
+                <div class="bg-white rounded-xl shadow-lg p-8 border-2 border-green-500 transform hover:scale-[1.02] transition duration-300"
+                     role="listitem"
+                     aria-labelledby="free-plan">
+                    <div class="text-center mb-6">
+                        <div class="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-4" 
+                             role="img" 
+                             aria-label="Бесплатный тариф">
+                            <i data-feather="unlock" class="text-green-600" aria-hidden="true"></i>
+                        </div>
+                        <h3 id="free-plan" class="text-xl font-bold text-gray-800 mb-2">Полностью открытый</h3>
+                        <div class="flex justify-center items-baseline mb-4">
+                            <span class="text-3xl font-bold text-gray-800">0 ₽</span>
+                            <span class="text-gray-500 ml-2 sr-only">навсегда</span>
+                        </div>
+                        <span class="inline-block bg-green-100 text-green-800 text-sm px-3 py-1 rounded-full">
+                            Бесплатно
+                        </span>
+                    </div>
+                    
+                    <div>
+                        <ul class="space-y-4 mb-8" role="list">
+                            <li class="flex items-start">
+                                <i data-feather="check" class="text-green-500 mr-3 mt-1 flex-shrink-0" aria-hidden="true"></i>
+                                <span>Базовые функции всех виджетов</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="text-green-500 mr-3 mt-1 flex-shrink-0" aria-hidden="true"></i>
+                                <span>Ограниченная кастомизация</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="x" class="text-gray-400 mr-3 mt-1 flex-shrink-0" aria-hidden="true"></i>
+                                <span class="text-gray-500">Приоритетная поддержка</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="x" class="text-gray-400 mr-3 mt-1 flex-shrink-0" aria-hidden="true"></i>
+                                <span class="text-gray-500">Автоматические обновления</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Полный тариф -->
+                <div class="bg-gradient-to-b from-blue-50 to-white rounded-xl shadow-xl p-8 border-2 border-blue-500 transform hover:scale-[1.02] transition duration-300 relative"
+                     role="listitem"
+                     aria-labelledby="full-plan">
+                    <div class="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                        <span class="bg-blue-500 text-white px-4 py-1 rounded-full text-sm font-semibold">
+                            Самый популярный
+                        </span>
+                    </div>
+
+                    <div class="text-center mb-6">
+                        <div class="inline-flex items-center justify-center w-16 h-16 bg-blue-100 rounded-full mb-4"
+                             role="img"
+                             aria-label="Полный тариф">
+                            <i data-feather="star" class="text-blue-600" aria-hidden="true"></i>
+                        </div>
+                        <h3 id="full-plan" class="text-xl font-bold text-gray-800 mb-2">Полный</h3>
+                        <div class="flex justify-center items-baseline mb-2">
+                            <span class="text-4xl font-bold text-gray-800">10.000 ₽</span>
+                            <span class="text-gray-500 ml-2">/ безлимит</span>
+                        </div>
+                        <p class="text-green-600 font-semibold mb-4">
+                            <span aria-hidden="true">✓</span> 7 дней пробного периода
+                        </p>
+                        <span class="inline-block bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full">
+                            Неограниченное использование
+                        </span>
+                    </div>
+
+                    <ul class="space-y-4 mb-8" role="list">
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-blue-500 mr-3 mt-1 flex-shrink-0" aria-hidden="true"></i>
+                            <span><strong>Полный доступ ко всем 5 виджетам</strong></span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-blue-500 mr-3 mt-1 flex-shrink-0" aria-hidden="true"></i>
+                            <span>Все функции настроек каждого виджета</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-blue-500 mr-3 mt-1 flex-shrink-0" aria-hidden="true"></i>
+                            <span>Приоритетная техническая поддержка</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-blue-500 mr-3 mt-1 flex-shrink-0" aria-hidden="true"></i>
+                            <span>Автоматические обновления</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-blue-500 mr-3 mt-1 flex-shrink-0" aria-hidden="true"></i>
+                            <span>Доступ к API и документации</span>
+                        </li>
+                    </ul>
+
+                    <a href="https://t.me/semyonfedoseev"
+                       class="block text-center w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white py-3 rounded-lg font-semibold transition duration-300 shadow-lg"
+                       role="button"
+                       aria-label="Начать пробный период для полного тарифа">
+                        Начать пробный период
+                    </a>
+                </div>
+
+                <!-- Pro дополнения -->
+                <div class="bg-white rounded-xl shadow-lg p-8 border-2 border-purple-500 transform hover:scale-[1.02] transition duration-300"
+                     role="listitem"
+                     aria-labelledby="pro-plan">
+                    <div class="text-center mb-6">
+                        <div class="inline-flex items-center justify-center w-16 h-16 bg-purple-100 rounded-full mb-4"
+                             role="img"
+                             aria-label="Pro дополнения">
+                            <i data-feather="zap" class="text-purple-600" aria-hidden="true"></i>
+                        </div>
+                        <h3 id="pro-plan" class="text-xl font-bold text-gray-800 mb-2">Pro дополнения</h3>
+                        <div class="flex justify-center items-baseline mb-4">
+                            <span class="text-3xl font-bold text-gray-800">2.000 ₽</span>
+                            <span class="text-gray-500 ml-2">/ месяц</span>
+                        </div>
+                        <p class="text-sm text-gray-600 mb-2">Дополнение к Полному тарифу</p>
+                        <span class="inline-block bg-purple-100 text-purple-800 text-sm px-3 py-1 rounded-full">
+                            Расширенные возможности
+                        </span>
+                    </div>
+
+                    <ul class="space-y-4 mb-8" role="list">
+                        <li class="flex items-start">
+                            <i data-feather="plus" class="text-purple-500 mr-3 mt-1 flex-shrink-0" aria-hidden="true"></i>
+                            <span>Продвинутая аналитика с AI-инсайтами</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="plus" class="text-purple-500 mr-3 mt-1 flex-shrink-0" aria-hidden="true"></i>
+                            <span>Интеграция с CRM и маркетинг-системами</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="plus" class="text-purple-500 mr-3 mt-1 flex-shrink-0" aria-hidden="true"></i>
+                            <span>Кастомизированные отчеты по запросу</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="plus" class="text-purple-500 mr-3 mt-1 flex-shrink-0" aria-hidden="true"></i>
+                            <span>Расширенные A/B тестирования</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="plus" class="text-purple-500 mr-3 mt-1 flex-shrink-0" aria-hidden="true"></i>
+                            <span>Персональный менеджер</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="plus" class="text-purple-500 mr-3 mt-1 flex-shrink-0" aria-hidden="true"></i>
+                            <span>Ранний доступ к новым функциям</span>
+                        </li>
+                    </ul>
+
+                    <a href="https://t.me/semyonfedoseev"
+                       class="block text-center w-full bg-purple-500 hover:bg-purple-600 text-white py-3 rounded-lg font-semibold transition duration-300"
+                       role="button"
+                       aria-label="Добавить Pro дополнения к полному тарифу">
+                        Добавить к Полному тарифу
+                    </a>
+                </div>
+            </div>
+
+            <!-- Comparison Table -->
+            <div class="mt-12 bg-white rounded-xl shadow-lg overflow-hidden" role="region" aria-labelledby="comparison-heading">
+                <div class="p-6 border-b">
+                    <h3 id="comparison-heading" class="text-xl font-bold text-gray-800 text-center">Сравнение тарифов</h3>
+                </div>
+                
+                <div class="overflow-x-auto">
+                    <table class="w-full" role="table" aria-describedby="comparison-heading">
+                        <caption class="sr-only">Таблица сравнения тарифных планов Forkpack</caption>
+                        <thead>
+                            <tr class="bg-gray-50" role="row">
+                                <th scope="col" class="text-left p-4 font-semibold text-gray-800" role="columnheader">Функция</th>
+                                <th scope="col" class="text-center p-4 font-semibold text-gray-800" role="columnheader">Полностью открытый</th>
+                                <th scope="col" class="text-center p-4 font-semibold text-blue-600" role="columnheader">Полный</th>
+                                <th scope="col" class="text-center p-4 font-semibold text-purple-600" role="columnheader">Pro дополнения</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                            <tr role="row">
+                                <th scope="row" class="p-4 text-gray-700 font-normal" role="rowheader">Количество виджетов</th>
+                                <td class="text-center p-4" role="cell">5 (базовые)</td>
+                                <td class="text-center p-4 text-blue-600 font-semibold" role="cell">5 (полные)</td>
+                                <td class="text-center p-4 text-purple-600 font-semibold" role="cell">+ расширения</td>
+                            </tr>
+                            <tr class="bg-gray-50" role="row">
+                                <th scope="row" class="p-4 text-gray-700 font-normal" role="rowheader">Пробный период</th>
+                                <td class="text-center p-4" role="cell">-</td>
+                                <td class="text-center p-4 text-blue-600 font-semibold" role="cell">7 дней</td>
+                                <td class="text-center p-4" role="cell">-</td>
+                            </tr>
+                            <tr role="row">
+                                <th scope="row" class="p-4 text-gray-700 font-normal" role="rowheader">Техническая поддержка</th>
+                                <td class="text-center p-4" role="cell">Базовая</td>
+                                <td class="text-center p-4 text-blue-600 font-semibold" role="cell">Приоритетная</td>
+                                <td class="text-center p-4 text-purple-600 font-semibold" role="cell">Персональная</td>
+                            </tr>
+                            <tr class="bg-gray-50" role="row">
+                                <th scope="row" class="p-4 text-gray-700 font-normal" role="rowheader">Аналитика и отчеты</th>
+                                <td class="text-center p-4" role="cell">Базовые</td>
+                                <td class="text-center p-4 text-blue-600 font-semibold" role="cell">Расширенные</td>
+                                <td class="text-center p-4 text-purple-600 font-semibold" role="cell">AI-инсайты</td>
+                            </tr>
+                            <tr role="row">
+                                <th scope="row" class="p-4 text-gray-700 font-normal" role="rowheader">Интеграции</th>
+                                <td class="text-center p-4" role="cell">Ограниченные</td>
+                                <td class="text-center p-4 text-blue-600 font-semibold" role="cell">Стандартные</td>
+                                <td class="text-center p-4 text-purple-600 font-semibold" role="cell">Расширенные</td>
+                            </tr>
+                            <tr class="bg-gray-50" role="row">
+                                <th scope="row" class="p-4 text-gray-700 font-normal" role="rowheader">Стоимость</th>
+                                <td class="text-center p-4 text-green-600 font-semibold" role="cell">0 ₽</td>
+                                <td class="text-center p-4 text-blue-600 font-semibold" role="cell">10.000 ₽</td>
+                                <td class="text-center p-4 text-purple-600 font-semibold" role="cell">2.000 ₽</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Установить виджет с CDN -->
+        <section id="setup" class="bg-white rounded-xl shadow-lg p-8 mb-12 border-l-4 border-blue-500"
+                 role="region"
+                 aria-labelledby="setup-heading">
+            <h2 id="setup-heading" class="text-2xl font-bold text-gray-800 mb-4 flex items-center">
+                <i data-feather="code" class="mr-3" aria-hidden="true"></i>
+                Установить виджеты на ваш сайт
+            </h2>
+            
+            <p class="text-gray-600 mb-6">Скопируйте и вставьте этот код на ваш сайт, чтобы подключить все виджеты сразу</p>
+
+            <div class="mb-6">
+                <div class="flex justify-between items-center mb-3">
+                    <h3 class="font-semibold text-gray-800">Код для вставки:</h3>
+                    <button id="copyCodeBtn"
+                            class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg font-medium transition duration-300 flex items-center"
+                            aria-label="Скопировать код установки"
+                            aria-describedby="code-instructions">
+                        <i data-feather="copy" class="mr-2" aria-hidden="true"></i>
+                        Скопировать код
+                    </button>
+                </div>
+
+                <div class="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto" role="region" aria-label="Пример кода">
+                    <pre id="widgetCode" class="text-sm" aria-describedby="code-description">
+<span class="text-green-400">&lt;!-- forkpack --&gt;</span>
+<span class="text-blue-400">&lt;script type="module" </span><span class="text-yellow-400">src=</span><span class="text-red-300">"https://unpkg.com/forkpack@0.1.0-beta.0/cdn/fp.umd.min.js?module"</span><span class="text-blue-400">&gt;&lt;/script&gt;</span>
+                    </pre>
+                    <div id="code-description" class="sr-only">
+                        HTML код для подключения виджетов Forkpack через CDN
+                    </div>
+                </div>
+
+                <div id="copySuccess" 
+                     class="hidden mt-3 p-3 bg-green-100 text-green-700 rounded-lg flex items-center"
+                     role="alert"
+                     aria-live="polite"
+                     aria-atomic="true">
+                    <i data-feather="check-circle" class="mr-2" aria-hidden="true"></i>
+                    Код успешно скопирован в буфер обмена! Теперь вставьте его перед закрывающим тегом &lt;/body&gt; на вашем сайте.
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-blue-50 p-5 rounded-lg" role="region" aria-labelledby="installation-steps">
+                    <h4 id="installation-steps" class="font-semibold text-gray-800 mb-3 flex items-center">
+                        <i data-feather="info" class="mr-2 text-blue-500" aria-hidden="true"></i>
+                        Как установить:
+                    </h4>
+                    <ol class="space-y-2 list-decimal pl-5 text-gray-700" role="list">
+                        <li role="listitem">Скопируйте код выше</li>
+                        <li role="listitem">Вставьте код на страницы вашего сайта</li>
+                        <li role="listitem">Разместите код перед закрывающим тегом &lt;/body&gt;</li>
+                        <li role="listitem">Замените ключ токена в настройках синхронизации</li>
+                        <li role="listitem">Сохраните изменения и обновите страницу</li>
+                    </ol>
+                </div>
+
+                <div class="bg-green-50 p-5 rounded-lg" role="region" aria-labelledby="cdn-benefits">
+                    <h4 id="cdn-benefits" class="font-semibold text-gray-800 mb-3 flex items-center">
+                        <i data-feather="zap" class="mr-2 text-green-500" aria-hidden="true"></i>
+                        Преимущества CDN:
+                    </h4>
+                    <ul class="space-y-2 text-gray-700" role="list">
+                        <li class="flex items-start" role="listitem">
+                            <i data-feather="check" class="text-green-500 mr-2 mt-1 flex-shrink-0" aria-hidden="true"></i>
+                            <span>Быстрая загрузка по всему миру</span>
+                        </li>
+                        <li class="flex items-start" role="listitem">
+                            <i data-feather="check" class="text-green-500 mr-2 mt-1 flex-shrink-0" aria-hidden="true"></i>
+                            <span>Автоматические обновления</span>
+                        </li>
+                        <li class="flex items-start" role="listitem">
+                            <i data-feather="check" class="text-green-500 mr-2 mt-1 flex-shrink-0" aria-hidden="true"></i>
+                            <span>Кэширование для повышения скорости</span>
+                        </li>
+                        <li class="flex items-start" role="listitem">
+                            <i data-feather="check" class="text-green-500 mr-2 mt-1 flex-shrink-0" aria-hidden="true"></i>
+                            <span>Надежная инфраструктура</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-6 p-4 bg-yellow-50 border border-yellow-200 rounded-lg" role="alert" aria-labelledby="important-note">
+                <div class="flex items-start">
+                    <i data-feather="alert-triangle" class="text-yellow-500 mr-3 mt-1 flex-shrink-0" aria-hidden="true"></i>
+                    <div>
+                        <h5 id="important-note" class="font-semibold text-gray-800 mb-1">Важно!</h5>
+                        <p class="text-gray-700 text-sm">
+                            API ключ доступен только для пользователей Полного тарифа.
+                            После начала пробного периода вы получите уникальный API ключ для активации виджетов.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Как это работает -->
+        <section class="bg-white rounded-xl shadow-lg p-8 mb-12 border-l-4 border-purple-500"
+                 role="region"
+                 aria-labelledby="how-it-works-heading">
+            <h2 id="how-it-works-heading" class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                <i data-feather="play-circle" class="mr-3" aria-hidden="true"></i>
+                Как это работает
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8" role="list" aria-label="Шаги установки">
+                <!-- Шаг 1 -->
+                <div class="relative" role="listitem" aria-label="Шаг 1: Выбрать тариф">
+                    <div class="absolute -top-3 -left-3 w-10 h-10 bg-purple-500 text-white rounded-full flex items-center justify-center font-bold text-xl"
+                         role="presentation"
+                         aria-hidden="true">
+                        1
+                    </div>
+                    <div class="bg-gradient-to-br from-purple-50 to-pink-50 p-6 rounded-xl border border-purple-100 h-full pt-8">
+                        <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4" 
+                             role="img"
+                             aria-label="Иконка выбора тарифа">
+                            <i data-feather="layers" class="text-purple-600" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="font-bold text-gray-800 mb-3 text-lg">Выбрать тариф</h3>
+                        <p class="text-gray-700">
+                            Начните с бесплатного или выберите Полный тариф с пробным периодом
+                        </p>
+                        <div class="mt-4 p-3 bg-white rounded-lg border border-purple-200">
+                            <p class="text-sm text-purple-700 font-medium">
+                                <i data-feather="star" class="inline mr-1" aria-hidden="true"></i>
+                                Полный тариф: 7 дней пробного периода
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Шаг 2 -->
+                <div class="relative" role="listitem" aria-label="Шаг 2: Добавить код">
+                    <div class="absolute -top-3 -left-3 w-10 h-10 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold text-xl"
+                         role="presentation"
+                         aria-hidden="true">
+                        2
+                    </div>
+                    <div class="bg-gradient-to-br from-blue-50 to-cyan-50 p-6 rounded-xl border border-blue-100 h-full pt-8">
+                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4"
+                             role="img"
+                             aria-label="Иконка добавления кода">
+                            <i data-feather="code" class="text-blue-600" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="font-bold text-gray-800 mb-3 text-lg">Добавить код</h3>
+                        <p class="text-gray-700">
+                            Скопируйте и вставьте код на ваш сайт перед закрывающим тегом &lt;/body&gt;
+                        </p>
+                        <div class="mt-4 p-3 bg-white rounded-lg border border-blue-200">
+                            <p class="text-sm text-blue-700 font-medium">
+                                <i data-feather="clipboard" class="inline mr-1" aria-hidden="true"></i>
+                                Код выше уже готов для копирования
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Шаг 3 -->
+                <div class="relative" role="listitem" aria-label="Шаг 3: Получить API ключ">
+                    <div class="absolute -top-3 -left-3 w-10 h-10 bg-green-500 text-white rounded-full flex items-center justify-center font-bold text-xl"
+                         role="presentation"
+                         aria-hidden="true">
+                        3
+                    </div>
+                    <div class="bg-gradient-to-br from-green-50 to-emerald-50 p-6 rounded-xl border border-green-100 h-full pt-8">
+                        <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4"
+                             role="img"
+                             aria-label="Иконка API ключа">
+                            <i data-feather="key" class="text-green-600" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="font-bold text-gray-800 mb-3 text-lg">Получить API ключ</h3>
+                        <p class="text-gray-700">
+                            После регистрации вы получите API ключ для активации виджетов
+                        </p>
+                        <div class="mt-4 p-3 bg-white rounded-lg border border-green-200">
+                            <p class="text-sm text-green-700 font-medium">
+                                <i data-feather="clock" class="inline mr-1" aria-hidden="true"></i>
+                                Активация в течение 5 минут
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Шаг 4 -->
+                <div class="relative" role="listitem" aria-label="Шаг 4: Настроить виджеты">
+                    <div class="absolute -top-3 -left-3 w-10 h-10 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold text-xl"
+                         role="presentation"
+                         aria-hidden="true">
+                        4
+                    </div>
+                    <div class="bg-gradient-to-br from-orange-50 to-amber-50 p-6 rounded-xl border border-orange-100 h-full pt-8">
+                        <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4"
+                             role="img"
+                             aria-label="Иконка настроек">
+                            <i data-feather="settings" class="text-orange-600" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="font-bold text-gray-800 mb-3 text-lg">Настроить виджеты</h3>
+                        <p class="text-gray-700">
+                            Настройте внешний вид и функционал под ваши нужды
+                        </p>
+                        <div class="mt-4 p-3 bg-white rounded-lg border border-orange-200">
+                            <p class="text-sm text-orange-700 font-medium">
+                                <i data-feather="sliders" class="inline mr-1" aria-hidden="true"></i>
+                                Изменения применяются мгновенно
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA блок -->
+            <div class="mt-8 bg-gradient-to-r from-blue-500 to-purple-600 text-white p-6 rounded-xl text-center"
+                 role="region"
+                 aria-label="Призыв к действию">
+                <h3 class="text-xl font-bold mb-3">Готовы начать?</h3>
+                <p class="mb-4 opacity-90">Выберите тариф и подключите виджеты за 4 простых шага</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#pricing"
+                       class="bg-white text-blue-600 hover:bg-gray-100 px-6 py-3 rounded-lg font-semibold transition duration-300 text-center"
+                       role="button"
+                       aria-label="Перейти к выбору тарифов">
+                        <i data-feather="layers" class="inline mr-2" aria-hidden="true"></i>
+                        Выбрать тариф
+                    </a>
+                    <a href="#setup"
+                       class="bg-black bg-opacity-20 hover:bg-opacity-30 text-white px-6 py-3 rounded-lg font-semibold transition duration-300 flex items-center justify-center"
+                       role="button"
+                       aria-label="Перейти к копированию кода">
+                        <i data-feather="copy" class="mr-2" aria-hidden="true"></i>
+                        Скопировать код
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Widgets Grid -->
+        <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12"
+                 role="region"
+                 aria-labelledby="widgets-heading">
+            <h2 id="widgets-heading" class="sr-only">Доступные виджеты</h2>
+            
+            <!-- Discount Widget -->
+            <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition duration-300"
+                 role="article"
+                 aria-labelledby="discount-widget">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center mr-3"
+                             role="img"
+                             aria-label="Иконка скидки">
+                            <i data-feather="tag" class="text-green-600" aria-hidden="true"></i>
+                        </div>
+                        <h3 id="discount-widget" class="text-lg font-semibold text-gray-800">Сообщение о скидке</h3>
+                    </div>
+                    <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full" aria-label="Доступен">✅</span>
+                </div>
+                <p class="text-gray-600 mb-4">Показывать информацию о текущих акциях и скидках</p>
+                <div class="flex items-center text-sm text-gray-500 mb-3">
+                    <i data-feather="check" class="w-4 h-4 mr-1 text-green-500" aria-hidden="true"></i>
+                    <span>Доступен во всех тарифах</span>
+                </div>
+            </div>
+
+            <!-- Privacy Widget -->
+            <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition duration-300"
+                 role="article"
+                 aria-labelledby="privacy-widget">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-3"
+                             role="img"
+                             aria-label="Иконка конфиденциальности">
+                            <i data-feather="shield" class="text-blue-600" aria-hidden="true"></i>
+                        </div>
+                        <h3 id="privacy-widget" class="text-lg font-semibold text-gray-800">Уведомление о конфиденциальности</h3>
+                    </div>
+                    <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full" aria-label="Доступен">✅</span>
+                </div>
+                <p class="text-gray-600 mb-4">Отображать политику конфиденциальности и использование cookies</p>
+                <div class="flex items-center text-sm text-gray-500 mb-3">
+                    <i data-feather="check" class="w-4 h-4 mr-1 text-green-500" aria-hidden="true"></i>
+                    <span>Доступен во всех тарифах</span>
+                </div>
+            </div>
+
+            <!-- News Widget -->
+            <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition duration-300"
+                 role="article"
+                 aria-labelledby="news-widget">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center mr-3"
+                             role="img"
+                             aria-label="Иконка новостей">
+                            <i data-feather="bell" class="text-purple-600" aria-hidden="true"></i>
+                        </div>
+                        <h3 id="news-widget" class="text-lg font-semibold text-gray-800">Новости и обновления</h3>
+                    </div>
+                    <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full" aria-label="Доступен">✅</span>
+                </div>
+                <p class="text-gray-600 mb-4">Показывать последние новости и обновления системы</p>
+                <div class="flex items-center text-sm text-gray-500 mb-3">
+                    <i data-feather="star" class="w-4 h-4 mr-1 text-blue-500" aria-hidden="true"></i>
+                    <span>Расширенные функции в Полном тарифе</span>
+                </div>
+            </div>
+
+            <!-- Statistics Widget -->
+            <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition duration-300"
+                 role="article"
+                 aria-labelledby="stats-widget">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center mr-3"
+                             role="img"
+                             aria-label="Иконка статистики">
+                            <i data-feather="bar-chart-2" class="text-orange-600" aria-hidden="true"></i>
+                        </div>
+                        <h3 id="stats-widget" class="text-lg font-semibold text-gray-800">Статистика</h3>
+                    </div>
+                    <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full" aria-label="Доступен">✅</span>
+                </div>
+                <p class="text-gray-600 mb-4">Отображать статистику использования системы</p>
+                <div class="flex items-center text-sm text-gray-500 mb-3">
+                    <i data-feather="star" class="w-4 h-4 mr-1 text-blue-500" aria-hidden="true"></i>
+                    <span>Расширенные функции в Полном тарифе</span>
+                </div>
+            </div>
+
+            <!-- Engagement Widget -->
+            <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition duration-300"
+                 role="article"
+                 aria-labelledby="engagement-widget">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center mr-3"
+                             role="img"
+                             aria-label="Иконка вовлеченности">
+                            <i data-feather="activity" class="text-red-600" aria-hidden="true"></i>
+                        </div>
+                        <h3 id="engagement-widget" class="text-lg font-semibold text-gray-800">Вовлеченность</h3>
+                    </div>
+                    <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full" aria-label="Доступен">✅</span>
+                </div>
+                <p class="text-gray-600 mb-4">Показывает активность других пользователей для повышения вовлеченности</p>
+                <div class="flex items-center text-sm text-gray-500 mb-3">
+                    <i data-feather="zap" class="w-4 h-4 mr-1 text-purple-500" aria-hidden="true"></i>
+                    <span>AI-аналитика в Pro дополнениях</span>
+                </div>
+            </div>
+
+            <!-- Coming Soon Widget -->
+            <div class="bg-gray-50 rounded-xl shadow-md p-6 border-2 border-dashed border-gray-300"
+                 role="article"
+                 aria-labelledby="coming-soon-widget">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-gray-200 rounded-lg flex items-center justify-center mr-3"
+                             role="img"
+                             aria-label="Иконка нового виджета">
+                            <i data-feather="plus" class="text-gray-500" aria-hidden="true"></i>
+                        </div>
+                        <h3 id="coming-soon-widget" class="text-lg font-semibold text-gray-500">Новый виджет</h3>
+                    </div>
+                    <span class="bg-gray-200 text-gray-500 text-xs px-2 py-1 rounded-full" aria-label="Скоро будет доступен">🔒</span>
+                </div>
+                <p class="text-gray-500 mb-4">Скоро появится новый полезный виджет</p>
+                <div class="flex items-center text-sm text-gray-500 mb-3">
+                    <i data-feather="star" class="w-4 h-4 mr-1 text-gray-400" aria-hidden="true"></i>
+                    <span>Только для Полного тарифа</span>
+                </div>
+                <button class="w-full bg-gray-200 text-gray-500 py-2 rounded-lg font-medium cursor-not-allowed"
+                        disabled
+                        aria-label="Скоро будет доступен">
+                    Скоро
+                </button>
+            </div>
+        </section>
+
+        <!-- FAQ Section with Big Button -->
+        <section class="mb-12" role="region" aria-labelledby="faq-heading">
+            <div class="bg-white rounded-2xl shadow-lg p-8">
+                <h2 id="faq-heading" class="text-2xl font-bold text-gray-800 mb-6 text-center flex items-center justify-center">
+                    <i data-feather="help-circle" class="mr-3 text-purple-600" aria-hidden="true"></i>
+                    Часто задаваемые вопросы
+                </h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- FAQ Item 1 -->
+                    <div class="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-xl border border-blue-100 hover:border-blue-300 transition duration-300"
+                         role="article"
+                         aria-labelledby="faq-1">
+                        <div class="flex items-start mb-3">
+                            <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4 flex-shrink-0"
+                                 role="img"
+                                 aria-label="Иконка API ключа">
+                                <i data-feather="key" class="text-blue-600" aria-hidden="true"></i>
+                            </div>
+                            <div>
+                                <h3 id="faq-1" class="text-lg font-bold text-gray-800 mb-2">Как получить API ключ?</h3>
+                                <p class="text-gray-700">
+                                    API ключ доступен только для пользователей <strong>Полного тарифа</strong>.
+                                    После регистрации и начала пробного периода ключ будет доступен в личном кабинете.
+                                </p>
+                                <div class="mt-3 p-3 bg-blue-100 rounded-lg">
+                                    <p class="text-sm text-blue-800 font-medium">
+                                        <i data-feather="info" class="inline mr-2" aria-hidden="true"></i>
+                                        В бесплатном тарифе API ключ не требуется
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 2 -->
+                    <div class="bg-gradient-to-br from-green-50 to-emerald-50 p-6 rounded-xl border border-green-100 hover:border-green-300 transition duration-300"
+                         role="article"
+                         aria-labelledby="faq-2">
+                        <div class="flex items-start mb-3">
+                            <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mr-4 flex-shrink-0"
+                                 role="img"
+                                 aria-label="Иконка обновления тарифа">
+                                <i data-feather="credit-card" class="text-green-600" aria-hidden="true"></i>
+                            </div>
+                            <div>
+                                <h3 id="faq-2" class="text-lg font-bold text-gray-800 mb-2">Можно ли обновить тариф?</h3>
+                                <p class="text-gray-700">
+                                    Да, вы можете в любой момент перейти с бесплатного на Полный тариф или добавить Pro дополнения.
+                                    Стоимость будет пересчитана пропорционально.
+                                </p>
+                                <div class="mt-3 p-3 bg-green-100 rounded-lg">
+                                    <p class="text-sm text-green-800 font-medium">
+                                        <i data-feather="zap" class="inline mr-2" aria-hidden="true"></i>
+                                        При обновлении сохраняются все настройки
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 3 -->
+                    <div class="bg-gradient-to-br from-orange-50 to-amber-50 p-6 rounded-xl border border-orange-100 hover:border-orange-300 transition duration-300"
+                         role="article"
+                         aria-labelledby="faq-3">
+                        <div class="flex items-start mb-3">
+                            <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mr-4 flex-shrink-0"
+                                 role="img"
+                                 aria-label="Иконка сравнения тарифов">
+                                <i data-feather="toggle-right" class="text-orange-600" aria-hidden="true"></i>
+                            </div>
+                            <div>
+                                <h3 id="faq-3" class="text-lg font-bold text-gray-800 mb-2">Чем отличаются тарифы?</h3>
+                                <p class="text-gray-700">
+                                    <strong>Бесплатный:</strong> базовые функции, ограничения<br>
+                                    <strong>Полный:</strong> все функции, 7 дней пробный период<br>
+                                    <strong>Pro дополнения:</strong> AI-аналитика, интеграции
+                                </p>
+                                <div class="mt-3">
+                                    <a href="#pricing"
+                                       class="inline-flex items-center bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-lg text-sm font-medium"
+                                       role="button"
+                                       aria-label="Перейти к сравнению тарифов">
+                                        <i data-feather="layers" class="mr-2" aria-hidden="true"></i>
+                                        Сравнить тарифы
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 4 -->
+                    <div class="bg-gradient-to-br from-purple-50 to-pink-50 p-6 rounded-xl border border-purple-100 hover:border-purple-300 transition duration-300"
+                         role="article"
+                         aria-labelledby="faq-4">
+                        <div class="flex items-start mb-3">
+                            <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mr-4 flex-shrink-0"
+                                 role="img"
+                                 aria-label="Иконка адаптивности">
+                                <i data-feather="smartphone" class="text-purple-600" aria-hidden="true"></i>
+                            </div>
+                            <div>
+                                <h3 id="faq-4" class="text-lg font-bold text-gray-800 mb-2">Виджеты адаптивны?</h3>
+                                <p class="text-gray-700">
+                                    Да, все виджеты полностью адаптивны и автоматически подстраиваются под размер экрана.
+                                    На мобильных устройствах виджеты используют компактный режим.
+                                </p>
+                                <div class="mt-3 flex items-center">
+                                    <span class="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded mr-2" aria-label="Для мобильных">📱 Мобильные</span>
+                                    <span class="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded mr-2" aria-label="Для планшетов">💻 Планшеты</span>
+                                    <span class="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded" aria-label="Для десктоп">🖥️ Десктоп</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA Section -->
+        <section class="bg-gradient-to-r from-green-400 to-emerald-500 rounded-2xl shadow-2xl p-10 text-center text-white mb-12"
+                 role="region"
+                 aria-label="Завершающий призыв к действию">
+            <h2 class="text-3xl font-bold mb-6">Начните сегодня с 7-дневного пробного периода</h2>
+            <p class="text-xl mb-8 opacity-90 max-w-3xl mx-auto">
+                Получите полный доступ ко всем 5 виджетам и их функциям. Отмените в любой момент в течение пробного периода без оплаты.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-6">
+                <a href="https://t.me/semyonfedoseev"
+                   class="bg-white text-emerald-600 hover:bg-gray-100 px-10 py-4 rounded-xl font-bold text-lg transition duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+                   role="button"
+                   aria-label="Начать 7-дневный пробный период">
+                    <i data-feather="play" class="inline mr-3" aria-hidden="true"></i>
+                    Начать пробный период
+                </a>
+                <a href="#pricing"
+                   class="bg-transparent border-2 border-white hover:bg-white hover:bg-opacity-20 text-white px-10 py-4 rounded-xl font-bold text-lg transition duration-300"
+                   role="button"
+                   aria-label="Сравнить все тарифы">
+                    <i data-feather="layers" class="inline mr-3" aria-hidden="true"></i>
+                    Сравнить все тарифы
+                </a>
+            </div>
+            <p class="mt-6 text-sm opacity-80">
+                ❤️ Сделано с любовью
+            </p>
+        </section>
+    </main>
+
+    <script>
+        feather.replace();
+
+        // Функция для копирования кода
+        document.getElementById('copyCodeBtn').addEventListener('click', function () {
+            const codeElement = document.getElementById('widgetCode');
+            const textToCopy = codeElement.innerText;
+
+            // Создаем временный textarea для копирования
+            const textArea = document.createElement('textarea');
+            textArea.value = textToCopy;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+
+            // Показываем сообщение об успехе
+            const successMessage = document.getElementById('copySuccess');
+            successMessage.classList.remove('hidden');
+            successMessage.setAttribute('aria-live', 'assertive');
+
+            // Меняем текст кнопки
+            const originalText = this.innerHTML;
+            this.innerHTML = '<i data-feather="check" class="mr-2"></i>Код скопирован!';
+            this.setAttribute('aria-label', 'Код скопирован');
+
+            // Возвращаем оригинальный текст через 3 секунды
+            setTimeout(() => {
+                successMessage.classList.add('hidden');
+                successMessage.setAttribute('aria-live', 'polite');
+                this.innerHTML = originalText;
+                this.setAttribute('aria-label', 'Скопировать код установки');
+                feather.replace();
+            }, 3000);
+        });
+
+        // Добавляем обработку клавиатуры для кнопки копирования
+        document.getElementById('copyCodeBtn').addEventListener('keydown', function (e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                this.click();
+            }
+        });
+
+        // Обновляем иконки feather после динамических изменений
+        feather.replace();
+    </script>
+</body>
+
+</html>
